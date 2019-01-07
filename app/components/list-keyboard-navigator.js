@@ -1,0 +1,1 @@
+export { default } from 'ember-list-keyboard-navigator/components/list-keyboard-navigator';
