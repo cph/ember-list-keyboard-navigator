@@ -110,7 +110,7 @@ export default Component.extend({
 
   keyDown(e) {
     let { altKey, ctrlKey, metaKey, shiftKey, keyCode } = e;
-    if(altKey || ctrlKey || metaKey || shiftKey) return;
+    if(altKey || ctrlKey || metaKey) return;
     if(e.isDefaultPrevented()) return;
 
     if(keyCode >= KEY.ZERO && keyCode <= KEY.Z ||
@@ -118,6 +118,8 @@ export default Component.extend({
         keyCode === KEY.BACKSPACE) {
       this.getAction('onTyping')();
     }
+
+    if(shiftKey) return;
 
     switch(keyCode) {
       case KEY.DOWN:
