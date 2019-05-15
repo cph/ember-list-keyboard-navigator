@@ -59,11 +59,11 @@ export default Component.extend({
     this.reset();
     this._activeSelector = this.get('itemSelector');
     this._mouseOverHandler = run.bind(this, 'onMouseOverItem');
-    this.$().on('mouseover', this._mouseOverHandler);
+    $(this.element).on('mouseover', this._mouseOverHandler);
   },
 
   willDestroyElement() {
-    this.$().off('mouseover', this._mouseOverHandler);
+    $(this.element).off('mouseover', this._mouseOverHandler);
     this._super(...arguments);
   },
 
@@ -77,7 +77,7 @@ export default Component.extend({
     if(_highlightedBy === 'mouse') return;
     if(highlightedIndex < 0) return;
 
-    let $el = this.$(`${itemSelector}:eq(${highlightedIndex})`);
+    let $el = $(this.element).find(`${itemSelector}:eq(${highlightedIndex})`);
     if(highlightedIndex === 0) {
       scrollToTop($el);
     } else if(highlightedIndex === this.get('_list.length') - 1) {
@@ -98,7 +98,7 @@ export default Component.extend({
   scrollToSelectedItem() {
     let selectedItemIndex = this.get('selectedItemIndex');
     if(selectedItemIndex < 0) return;
-    let $el = this.$(`${this.get('itemSelector')}:eq(${selectedItemIndex})`);
+    let $el = $(this.element).find(`${this.get('itemSelector')}:eq(${selectedItemIndex})`);
     if($el.length > 0) scrollIntoView($el);
   },
 
@@ -180,7 +180,7 @@ export default Component.extend({
   onMouseOverItem(e) {
     if(!this.get('highlightOnMouseOver')) return;
     let $item = $(e.target).closest(this.get('itemSelector'));
-    let index = this.$(this.get('itemSelector')).index($item);
+    let index = $(this.element).find(this.get('itemSelector')).index($item);
     this.updateHighlightIndex({ index, highlightedBy: 'mouse' });
   },
 
@@ -193,7 +193,7 @@ export default Component.extend({
     if(this.get('focused')) {
       // Safari will scroll to the top of the div and cancel any click events if
       // we focus on the keyboard navigator when it or a child is already in focus
-      let $el = this.$();
+      let $el = $(this.element);
       let alreadyFocused = $el.is(document.activeElement) || $.contains($el[0], document.activeElement);
       if(!alreadyFocused) {
         $el.focus().trigger($.Event('keydown', { keyCode: KEY.DOWN }));
