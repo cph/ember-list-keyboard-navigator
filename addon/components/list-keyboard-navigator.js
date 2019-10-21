@@ -58,11 +58,14 @@ export default Component.extend({
     this.reset();
     this._activeSelector = this.get('itemSelector');
     this._mouseOverHandler = run.bind(this, 'onMouseOverItem');
+    this._mouseLeaveHandler = run.bind(this, 'onMouseLeave');
     this.element.addEventListener('mouseover', this._mouseOverHandler);
+    this.element.addEventListener('mouseleave', this._mouseLeaveHandler);
   },
 
   willDestroyElement() {
     this.element.removeEventListener('mouseover', this._mouseOverHandler);
+    this.element.removeEventListener('mouseleave', this._mouseLeaveHandler);
     this._super(...arguments);
   },
 
@@ -183,7 +186,7 @@ export default Component.extend({
     this.updateHighlightIndex({ index, highlightedBy: 'mouse' });
   },
 
-  mouseLeave(/* e */) {
+  onMouseLeave(/* e */) {
     if(!this.get('highlightOnMouseOver')) return;
     this.updateHighlightIndex({ index: -1, highlightedBy: 'mouse' });
   },
