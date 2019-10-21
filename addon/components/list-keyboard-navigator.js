@@ -4,7 +4,6 @@ import { not, oneWay } from '@ember/object/computed';
 import { observer, computed } from '@ember/object';
 import { run, schedule } from '@ember/runloop';
 import { typeOf } from '@ember/utils';
-import $ from 'jquery';
 import KEY from '../utils/keycodes';
 import { scrollToTop, scrollToBottom, scrollIntoView } from '../utils/scroll-helpers';
 
@@ -59,11 +58,11 @@ export default Component.extend({
     this.reset();
     this._activeSelector = this.get('itemSelector');
     this._mouseOverHandler = run.bind(this, 'onMouseOverItem');
-    $(this.element).on('mouseover', this._mouseOverHandler);
+    this.element.addEventListener('mouseover', this._mouseOverHandler);
   },
 
   willDestroyElement() {
-    $(this.element).off('mouseover', this._mouseOverHandler);
+    this.element.removeEventListener('mouseover', this._mouseOverHandler);
     this._super(...arguments);
   },
 
@@ -77,13 +76,13 @@ export default Component.extend({
     if(_highlightedBy === 'mouse') return;
     if(highlightedIndex < 0) return;
 
-    let $el = $(this.element).find(`${itemSelector}:eq(${highlightedIndex})`);
+    let el = this.element.querySelector(`${itemSelector}:nth-of-type(${highlightedIndex + 1})`);
     if(highlightedIndex === 0) {
-      scrollToTop($el);
+      scrollToTop(el);
     } else if(highlightedIndex === this.get('_list.length') - 1) {
-      scrollToBottom($el);
+      scrollToBottom(el);
     } else {
-      scrollIntoView($el);
+      scrollIntoView(el);
     }
   }),
 
@@ -98,8 +97,8 @@ export default Component.extend({
   scrollToSelectedItem() {
     let selectedItemIndex = this.get('selectedItemIndex');
     if(selectedItemIndex < 0) return;
-    let $el = $(this.element).find(`${this.get('itemSelector')}:eq(${selectedItemIndex})`);
-    if($el.length > 0) scrollIntoView($el);
+    let el = this.element.querySelector(`${this.itemSelector}:nth-of-type(${selectedItemIndex + 1})`);
+    if(el) scrollIntoView(el);
   },
 
   updateHighlightIndex({ index, highlightedBy }) {
@@ -179,8 +178,8 @@ export default Component.extend({
 
   onMouseOverItem(e) {
     if(!this.get('highlightOnMouseOver')) return;
-    let $item = $(e.target).closest(this.get('itemSelector'));
-    let index = $(this.element).find(this.get('itemSelector')).index($item);
+    let item = e.target.closest(this.itemSelector);
+    let index = Array.from(this.element.querySelectorAll(this.itemSelector).values()).indexOf(item);
     this.updateHighlightIndex({ index, highlightedBy: 'mouse' });
   },
 
@@ -193,10 +192,10 @@ export default Component.extend({
     if(this.get('focused')) {
       // Safari will scroll to the top of the div and cancel any click events if
       // we focus on the keyboard navigator when it or a child is already in focus
-      let $el = $(this.element);
-      let alreadyFocused = $el.is(document.activeElement) || $.contains($el[0], document.activeElement);
+      let alreadyFocused = this.element.contains(document.activeElement);
       if(!alreadyFocused) {
-        $el.focus().trigger($.Event('keydown', { keyCode: KEY.DOWN }));
+        this.element.focus();
+        this.element.dispatchEvent(new KeyboardEvent('keydown', { keyCode: KEY.DOWN }));
       }
     }
   }),
