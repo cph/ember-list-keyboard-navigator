@@ -1,6 +1,6 @@
 {
   "name": "ember-list-keyboard-navigator",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A component for handling keyboard navigation of a list of items",
   "keywords": [
     "ember-addon",
