@@ -1,4 +1,3 @@
-import EmberObject from '@ember/object';
 import { assert } from 'chai';
 import { describe, it, beforeEach } from 'mocha';
 import { setupRenderingTest } from 'ember-mocha';
@@ -7,22 +6,22 @@ import hbs from 'htmlbars-inline-precompile';
 
 const KEY = { DOWN: 40, UP: 38, ENTER: 13 };
 
-describe('Integration | Component | {{list-keyboard-navigator}}', function() {
+describe('Integration | Component | ListKeyboardNavigator', function() {
   setupRenderingTest();
 
   beforeEach(function() {
     this.set('list', [
-      EmberObject.create({ name: 'One' }),
-      EmberObject.create({ name: 'Two' }),
-      EmberObject.create({ name: 'Three' })
+      { name: 'One' },
+      { name: 'Two' },
+      { name: 'Three' }
     ]);
   });
 
   it('handles down arrow key navigation', async function() {
     await render(hbs`
-      {{#list-keyboard-navigator items=list as |node|}}
+      <ListKeyboardNavigator @items={{list}} as |node|>
         {{#if node}}{{node.name}}{{/if}}
-      {{/list-keyboard-navigator}}`);
+      </ListKeyboardNavigator>`);
 
     assert.equal(this.element.textContent.trim(), '');
 
@@ -32,9 +31,9 @@ describe('Integration | Component | {{list-keyboard-navigator}}', function() {
 
   it('handles up arrow key navigation', async function() {
     await render(hbs`
-      {{#list-keyboard-navigator items=list as |node|}}
+      <ListKeyboardNavigator @items={{list}} as |node|>
         {{#if node}}{{node.name}}{{/if}}
-      {{/list-keyboard-navigator}}`);
+      </ListKeyboardNavigator>`);
 
     assert.equal(this.element.textContent.trim(), '');
 
@@ -49,14 +48,14 @@ describe('Integration | Component | {{list-keyboard-navigator}}', function() {
 
   it('sends an action with the currently selected node when pressing Enter', async function(done) {
     this.set('enterAction', function(node) {
-      assert.equal('One', node.get('name'));
+      assert.equal('One', node.name);
       done();
     });
 
     await render(hbs`
-      {{#list-keyboard-navigator items=list onItemSelected=enterAction as |node|}}
+      <ListKeyboardNavigator @items={{list}} @onItemSelected={{enterAction}} as |node|>
         {{#if node}}{{node.name}}{{/if}}
-      {{/list-keyboard-navigator}}`);
+      </ListKeyboardNavigator>`);
 
     let target = find('[data-test-list-keyboard-navigator]');
     await triggerKeyEvent(target, 'keydown', KEY.DOWN);

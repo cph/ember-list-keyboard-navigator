@@ -1,1 +1,18 @@
-{{yield highlightedItem}}
+<div
+  class="list-keyboard-navigator"
+  tabindex="0"
+  data-test-list-keyboard-navigator
+  ...attributes
+  {{on "keydown" this.onKeyDown}}
+  {{on "mouseover" this.onMouseOverItem}}
+  {{on "mouseleave" this.onMouseLeave}}
+  {{on "focusin" this.onFocusIn}}
+  {{on "focusout" this.onFocusOut}}
+  {{did-insert this.reset}}
+  {{did-insert this.registerScrollElement}}
+  {{did-update this.acquireFocus @focused}}
+  {{did-update this.reset @items}}
+  {{will-destroy this.deregisterScrollElement}}
+>
+  {{yield this.highlightedItem}}
+</div>
