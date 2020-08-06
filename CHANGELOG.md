@@ -1,5 +1,8 @@
 # CHANGELOG
 
+### v0.1.1
+* **[fix]** - Fixed an issue autoscrolling with some item selectors (#17)
+
 ### v0.1.0
 * **[improvement]** - Refactored to use glimmer components (#16)
 * **[breaking]** - The `focused` param is no longer two-way bound; you must use the `onFocusIn` and `onFocusOut` actions to observe and update the param passed in to `focused`. (#16)
