@@ -73,7 +73,9 @@ export default class ListKeyboardNavigatorComponent extends Component {
     if (_highlightedBy === 'mouse') return;
     if (highlightedIndex < 0) return;
 
-    let el = this.scrollElement.querySelector(`${itemSelector}:nth-of-type(${highlightedIndex + 1})`);
+    const el = this.scrollElement.querySelectorAll(itemSelector)[highlightedIndex];
+    if (!el) { return; }
+
     if (highlightedIndex === 0) {
       scrollToTop(el);
     } else if(highlightedIndex === this._list.length - 1) {
@@ -94,8 +96,8 @@ export default class ListKeyboardNavigatorComponent extends Component {
   scrollToSelectedItem() {
     if (this.selectedItemIndex < 0) { return; }
 
-    let el = this.scrollElement.querySelector(`${this.itemSelector}:nth-of-type(${this.selectedItemIndex + 1})`);
-    if(el) scrollIntoView(el);
+    const el = this.scrollElement.querySelectorAll(this.itemSelector)[this.selectedItemIndex];
+    if (el) { scrollIntoView(el); }
   }
 
   updateHighlightIndex({ index, highlightedBy }) {
