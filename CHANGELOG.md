@@ -1,5 +1,10 @@
 # CHANGELOG
 
+### v0.2.0
+* **[breaking]** - Increased the minimum version of Node to 12 (#28)
+* **[fix]** - Updated `printf` to address CVE (#28)
+* **[improvement]** - Used GitHub Actions for testing
+
 ### v0.1.1
 * **[fix]** - Fixed an issue autoscrolling with some item selectors (#17)
 
