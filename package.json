@@ -69,6 +69,7 @@
   "resolutions": {
     "merge": "^2.1.1",
     "printf": "^0.6.1",
+    "set-value": "^4.0.1",
     "xmldom": "github:xmldom/xmldom#0.7.0",
     "xmlhttprequest-ssl": "^1.6.2"
   }
