@@ -1,6 +1,6 @@
 {
   "name": "ember-list-keyboard-navigator",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A component for handling keyboard navigation of a list of items",
   "keywords": [
     "ember-addon",
@@ -67,11 +67,15 @@
     "configPath": "tests/dummy/config"
   },
   "resolutions": {
+    "ansi-regex": "^5.0.1",
+    "follow-redirects": "^1.14.7",
+    "glob-parent": "^5.1.2",
+    "markdown-it": "^12.3.2",
     "merge": "^2.1.1",
+    "normalize-url": "^4.5.1",
     "printf": "^0.6.1",
     "set-value": "^4.0.1",
     "xmldom": "github:xmldom/xmldom#0.7.0",
-    "xmlhttprequest-ssl": "^1.6.2",
-    "ansi-regex": "^5.0.1"
+    "xmlhttprequest-ssl": "^1.6.2"
   }
 }
