@@ -68,6 +68,7 @@
   },
   "resolutions": {
     "ansi-regex": "^5.0.1",
+    "async": "^2.6.4",
     "follow-redirects": "^1.14.7",
     "glob-parent": "^5.1.2",
     "markdown-it": "^12.3.2",
