@@ -67,6 +67,7 @@
     "configPath": "tests/dummy/config"
   },
   "resolutions": {
+    "ansi-html": "^0.0.8",
     "ansi-regex": "^5.0.1",
     "async": "^2.6.4",
     "follow-redirects": "^1.14.7",
