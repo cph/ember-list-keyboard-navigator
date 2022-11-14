@@ -34,6 +34,7 @@
     "ember-decorators": "^6.1.1"
   },
   "devDependencies": {
+    "@ember/test-helpers": "^2.8.1",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^2.7.0",
     "ember-cli": "~3.28.0",
@@ -48,7 +49,7 @@
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.1.0",
     "ember-maybe-import-regenerator": "^0.1.6",
-    "ember-mocha": "^0.16.2",
+    "ember-qunit": "^5.1.5",
     "ember-resolver": "^5.0.1",
     "ember-source": "~3.24.0",
     "ember-source-channel-url": "^3.0.0",
@@ -58,7 +59,9 @@
     "eslint-plugin-ember": "^8.6.0",
     "eslint-plugin-node": "^11.1.0",
     "loader.js": "^4.7.0",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "qunit": "^2.19.3",
+    "qunit-dom": "^2.0.0"
   },
   "engines": {
     "node": "12.* || >= 14"
@@ -71,7 +74,6 @@
     "ansi-regex": "^5.0.1",
     "async": "^2.6.4",
     "ember-source-channel-url": "^3.0.0",
-    "follow-redirects": "^1.14.7",
     "glob-parent": "^5.1.2",
     "markdown-it": "^12.3.2",
     "merge": "^2.1.1",

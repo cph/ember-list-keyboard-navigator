@@ -1,15 +1,14 @@
-import { assert } from 'chai';
-import { describe, it, beforeEach } from 'mocha';
-import { setupRenderingTest } from 'ember-mocha';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
 import { render, triggerKeyEvent, find } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 const KEY = { DOWN: 40, UP: 38, ENTER: 13 };
 
-describe('Integration | Component | ListKeyboardNavigator', function() {
-  setupRenderingTest();
+module('Integration | Component | ListKeyboardNavigator', function(hooks) {
+  setupRenderingTest(hooks);
 
-  beforeEach(function() {
+  hooks.beforeEach(function() {
     this.set('list', [
       { name: 'One' },
       { name: 'Two' },
@@ -17,7 +16,7 @@ describe('Integration | Component | ListKeyboardNavigator', function() {
     ]);
   });
 
-  it('handles down arrow key navigation', async function() {
+  test('it handles down arrow key navigation', async function(assert) {
     await render(hbs`
       <ListKeyboardNavigator @items={{list}} as |node|>
         {{#if node}}{{node.name}}{{/if}}
@@ -29,7 +28,7 @@ describe('Integration | Component | ListKeyboardNavigator', function() {
     assert.equal(this.element.textContent.trim(), 'One');
   });
 
-  it('handles up arrow key navigation', async function() {
+  test('handles up arrow key navigation', async function(assert) {
     await render(hbs`
       <ListKeyboardNavigator @items={{list}} as |node|>
         {{#if node}}{{node.name}}{{/if}}
@@ -46,7 +45,10 @@ describe('Integration | Component | ListKeyboardNavigator', function() {
     assert.equal(this.element.textContent.trim(), 'Two');
   });
 
-  it('sends an action with the currently selected node when pressing Enter', async function(done) {
+  test('sends an action with the currently selected node when pressing Enter', async function(assert) {
+    assert.expect(1);
+    const done = assert.async();
+
     this.set('enterAction', function(node) {
       assert.equal('One', node.name);
       done();
