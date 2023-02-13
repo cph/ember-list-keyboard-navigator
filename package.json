@@ -74,7 +74,7 @@
     "ansi-regex": "^5.0.1",
     "async": "^2.6.4",
     "ember-source-channel-url": "^3.0.0",
-    "ember-try/**/cacheable-request": "^10.2.7",
+    "cacheable-request": "^10.2.7",
     "glob-parent": "^5.1.2",
     "markdown-it": "^12.3.2",
     "merge": "^2.1.1",
