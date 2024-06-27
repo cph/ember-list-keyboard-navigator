@@ -15,6 +15,7 @@
     "test": "tests"
   },
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "build": "ember build",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*",
     "lint:hbs": "ember-template-lint .",
@@ -86,7 +87,6 @@
     "qs": "^6.10.3",
     "semver": "^7.5.2",
     "set-value": "^4.0.1",
-    "ember-cli/**/debug": "^3.2.7",
     "xmldom": "github:xmldom/xmldom#0.7.0",
     "xmlhttprequest-ssl": "^1.6.2",
     "json5": "^2.2.3"
