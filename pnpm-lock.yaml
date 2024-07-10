@@ -23,6 +23,7 @@ overrides:
   qs: ^6.10.3
   semver: ^7.5.2
   set-value: ^4.0.1
+  socket.io-parser: ^3.4.3
   xmldom: github:xmldom/xmldom#0.7.0
   xmlhttprequest-ssl: ^1.6.2
   ws: ^7.5.10
@@ -3179,7 +3180,7 @@ packages:
     dependencies:
       graceful-fs: 4.2.11
       minimist: 1.2.6
-      mout: 1.2.3
+      mout: 1.2.4
       osenv: 0.1.5
       untildify: 2.1.0
       wordwrap: 0.0.3
@@ -8692,8 +8693,8 @@ packages:
       - supports-color
     dev: true
 
-  /mout@1.2.3:
-    resolution: {integrity: sha512-vtE+eZcSj/sBkIp6gxB87MznryWP+gHIp0XX9SKrzA5TAkvz6y7VTuNruBjYdJozd8NY5i9XVIsn8cn3SwNjzg==}
+  /mout@1.2.4:
+    resolution: {integrity: sha512-mZb9uOruMWgn/fw28DG4/yE3Kehfk1zKCLhuDU2O3vlKdnBBr4XaOCqVTflJ5aODavGUPqFHZgrFX3NJVuxGhQ==}
     dev: true
 
   /move-concurrently@1.0.1:
@@ -10309,7 +10310,7 @@ packages:
       indexof: 0.0.1
       parseqs: 0.0.6
       parseuri: 0.0.6
-      socket.io-parser: 3.3.3
+      socket.io-parser: 3.4.3
       to-array: 0.1.4
     transitivePeerDependencies:
       - bufferutil
@@ -10317,18 +10318,8 @@ packages:
       - utf-8-validate
     dev: true
 
-  /socket.io-parser@3.3.3:
-    resolution: {integrity: sha512-qOg87q1PMWWTeO01768Yh9ogn7chB9zkKtQnya41Y355S0UmpXgpcrFwAgjYJxu9BdKug5r5e9YtVSeWhKBUZg==}
-    dependencies:
-      component-emitter: 1.3.0
-      debug: 3.1.0
-      isarray: 2.0.1
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
-  /socket.io-parser@3.4.2:
-    resolution: {integrity: sha512-QFZBaZDNqZXeemwejc7D39jrq2eGK/qZuVDiMPKzZK1hLlNvjGilGt4ckfQZeVX4dGmuPzCytN9ZW1nQlEWjgA==}
+  /socket.io-parser@3.4.3:
+    resolution: {integrity: sha512-1rE4dZN3kCI/E5wixd393hmbqa78vVpkKmnEJhLeWoS/C5hbFYAbcSfnWoaVH43u9ToUVtzKjguxEZq+1XZfCQ==}
     engines: {node: '>=10.0.0'}
     dependencies:
       component-emitter: 1.2.1
@@ -10346,7 +10337,7 @@ packages:
       has-binary2: 1.0.3
       socket.io-adapter: 1.1.2
       socket.io-client: 2.5.0
-      socket.io-parser: 3.4.2
+      socket.io-parser: 3.4.3
     transitivePeerDependencies:
       - bufferutil
       - supports-color
