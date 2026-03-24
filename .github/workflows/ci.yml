@@ -2,7 +2,8 @@ name: CI
 on: [ push ]
 
 env:
-  NODE_VERSION: 16
+  NODE_VERSION: 20
+  PNPM_VERSION: 9
 
 jobs:
   lint:
@@ -16,7 +17,7 @@ jobs:
       - name: PNPM
         uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: ${{ env.PNPM_VERSION }}
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
@@ -50,7 +51,7 @@ jobs:
       - name: PNPM
         uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: ${{ env.PNPM_VERSION }}
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
