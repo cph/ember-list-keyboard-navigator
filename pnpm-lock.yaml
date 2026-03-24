@@ -11,6 +11,7 @@ overrides:
   braces: ^3.0.3
   ember-source-channel-url: ^3.0.0
   cacheable-request: ^10.2.7
+  flatted: ^3.4.0
   glob-parent: ^5.1.2
   json5: ^2.2.3
   markdown-it: ^12.3.2
@@ -6681,6 +6682,10 @@ packages:
 
   /flatted@2.0.2:
     resolution: {integrity: sha512-r5wGx7YeOwNWNlCA0wQ86zKyDLMQr+/RB8xy74M4hTphfmjlijTSSXGuH8rnvKZnfT9i+75zmd8jcKdMR4O6jA==}
+    dev: true
+
+  /flatted@3.4.2:
+    resolution: {integrity: sha512-PjDse7RzhcPkIJwy5t7KPWQSZ9cAbzQXcafsetQoD7sOJRQlGikNbx7yZp2OotDnJyrDcbyRq3Ttb18iYOqkxA==}
     dev: true
 
   /flush-write-stream@1.1.1:
