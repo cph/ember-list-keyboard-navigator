@@ -71,6 +71,7 @@
     "configPath": "tests/dummy/config"
   },
   "resolutions": {
+    "@babel/runtime": "^7.26.10",
     "ansi-html": "^0.0.8",
     "ansi-regex": "^5.0.1",
     "async": "^2.6.4",
