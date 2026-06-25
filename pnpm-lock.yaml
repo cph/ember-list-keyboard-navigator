@@ -29,7 +29,7 @@ overrides:
   socket.io-parser: ^3.4.3
   xmldom: github:xmldom/xmldom#0.7.0
   xmlhttprequest-ssl: ^1.6.2
-  ws: ^7.5.10
+  ws: ^7.5.11
 
 importers:
 
@@ -5896,8 +5896,8 @@ packages:
     resolution: {integrity: sha512-/lg70HAjtkUgWPVZhZcm+T4hkL8Zbtp1nFNOn3lRrxnlv50SRBv7cR7RqR+GMsd3hUXy9hWBo4CHTbFTcOYwig==}
     engines: {node: '>=4'}
 
-  ws@7.5.10:
-    resolution: {integrity: sha512-+dbF1tHwZpXcbOJdVOkzLDxZP1ailvSxM6ZweXTegylPny803bFhA+vqBYw4s31NSAk4S2Qz+AKXK9a4wkdjcQ==}
+  ws@7.5.11:
+    resolution: {integrity: sha512-zS54Oen9bITtp7kp2XM3AydrCIq1D+HwJOuH+c+e4LfpL/lotP5osijd+UoMnxwAam1GN8R4KtLAyIrIcBNpiA==}
     engines: {node: '>=8.3.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -9981,7 +9981,7 @@ snapshots:
       indexof: 0.0.1
       parseqs: 0.0.6
       parseuri: 0.0.6
-      ws: 7.5.10
+      ws: 7.5.11
       xmlhttprequest-ssl: 1.6.3
       yeast: 0.1.2
     transitivePeerDependencies:
@@ -10004,7 +10004,7 @@ snapshots:
       cookie: 0.4.2
       debug: 4.1.1
       engine.io-parser: 2.2.1
-      ws: 7.5.10
+      ws: 7.5.11
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -13519,7 +13519,7 @@ snapshots:
     dependencies:
       mkdirp: 0.5.5
 
-  ws@7.5.10: {}
+  ws@7.5.11: {}
 
   xdg-basedir@4.0.0: {}
 

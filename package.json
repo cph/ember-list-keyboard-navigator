@@ -95,6 +95,6 @@
     "socket.io-parser": "^3.4.3",
     "xmldom": "github:xmldom/xmldom#0.7.0",
     "xmlhttprequest-ssl": "^1.6.2",
-    "ws": "^7.5.10"
+    "ws": "^7.5.11"
   }
 }
