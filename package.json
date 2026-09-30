@@ -76,6 +76,7 @@
     "ansi-html": "^0.0.8",
     "ansi-regex": "^5.0.1",
     "async": "^2.6.4",
+    "brace-expansion": "^1.1.21",
     "braces": "^3.0.3",
     "ember-source-channel-url": "^3.0.0",
     "cacheable-request": "^10.2.7",
