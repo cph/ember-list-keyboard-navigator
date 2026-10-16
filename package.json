@@ -64,6 +64,7 @@
     "qunit": "^2.19.4",
     "qunit-dom": "^2.0.0"
   },
+  "packageManager": "pnpm@9.15.9",
   "engines": {
     "node": "16.* || >= 18"
   },
