@@ -30,7 +30,7 @@ overrides:
   semver: ^7.5.2
   set-value: ^4.0.1
   socket.io: ^2.5.1
-  socket.io-parser: ^3.4.3
+  socket.io-parser: ^3.4.5
   xmldom: github:xmldom/xmldom#0.7.0
   xmlhttprequest-ssl: ^1.6.2
   ws: ^7.5.11
@@ -5258,8 +5258,8 @@ packages:
   socket.io-client@2.5.0:
     resolution: {integrity: sha512-lOO9clmdgssDykiOmVQQitwBAF3I6mYcQAo7hQ7AM6Ny5X7fp8hIJ3HcQs3Rjz4SoggoxA1OgrQyY8EgTbcPYw==}
 
-  socket.io-parser@3.4.3:
-    resolution: {integrity: sha512-1rE4dZN3kCI/E5wixd393hmbqa78vVpkKmnEJhLeWoS/C5hbFYAbcSfnWoaVH43u9ToUVtzKjguxEZq+1XZfCQ==}
+  socket.io-parser@3.4.5:
+    resolution: {integrity: sha512-nrhzTtwpgt8tN+la+9Tpzj2epV7FMtr+9lqcfpwopjoxBfUXvBR7TWwF+/UT7RiTbFcHiEJdvRZ7yptJgZxo1Q==}
     engines: {node: '>=10.0.0'}
 
   socket.io@2.5.1:
@@ -12685,14 +12685,14 @@ snapshots:
       indexof: 0.0.1
       parseqs: 0.0.6
       parseuri: 0.0.6
-      socket.io-parser: 3.4.3
+      socket.io-parser: 3.4.5
       to-array: 0.1.4
     transitivePeerDependencies:
       - bufferutil
       - supports-color
       - utf-8-validate
 
-  socket.io-parser@3.4.3:
+  socket.io-parser@3.4.5:
     dependencies:
       component-emitter: 1.2.1
       debug: 4.1.1
@@ -12707,7 +12707,7 @@ snapshots:
       has-binary2: 1.0.3
       socket.io-adapter: 1.1.2
       socket.io-client: 2.5.0
-      socket.io-parser: 3.4.3
+      socket.io-parser: 3.4.5
     transitivePeerDependencies:
       - bufferutil
       - supports-color
