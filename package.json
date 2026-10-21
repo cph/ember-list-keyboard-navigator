@@ -84,7 +84,7 @@
     "glob-parent": "^5.1.2",
     "handlebars": "^4.7.10",
     "json5": "^2.2.3",
-    "markdown-it": "^12.3.2",
+    "markdown-it": "^14.3.3",
     "merge": "^2.1.1",
     "minimist": "^1.2.6",
     "mkdirp": "^0.5.5",
